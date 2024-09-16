@@ -1,7 +1,9 @@
-import { AppBar, Button, SvgIcon, Toolbar, Typography } from "@mui/material"
+import { AppBar, Button, SvgIcon, Toolbar, Tooltip, Typography } from "@mui/material"
 
 import styled from "styled-components"
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AccountBoxIcon from "@mui/icons-material/AccountBox"
+import LogoutIcon from "@mui/icons-material/Logout"
+import { Grid } from "@mui/joy"
 
 const StyleToolbar = styled(Toolbar)({
   display: "flex",
@@ -11,14 +13,21 @@ const StyleToolbar = styled(Toolbar)({
 function Header() {
   return (
     <>
-      <AppBar  position="sticky" sx={{ height: 100, marginBottom: 10,backgroundColor:"black" }}>
-        <StyleToolbar >
-          <Typography variant="h5">TRUST APP</Typography>
-          <Button sx={{marginLeft:150}} variant="contained" color="success">
-          {/* <SvgIcon deta-testid="AccountBoxIcon">Profile</SvgIcon> */}
-          <AccountBoxIcon color="disablet" />
-      </Button>
-          {/* {appState.loggedIn ? <HeaderLoggedIn  /> : <HeaderLoggedOut  />} */}
+      <AppBar sx={{ backgroundColor: "black" }}>
+        <StyleToolbar sx={{ gap: 1 }}>
+          <Typography width="200px" sx={{marginRight:130}} variant="h4">
+            TRUST APP
+          </Typography>
+
+        
+            <Button sx={{  }} variant="contained" color="action">
+              <AccountBoxIcon fontSize="large" />
+            </Button>
+
+            <Button  sx={{  }} variant="contained" color="action">
+              <LogoutIcon fontSize="large" />
+            </Button>
+         
         </StyleToolbar>
       </AppBar>
     </>
