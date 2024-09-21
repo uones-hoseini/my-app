@@ -1,10 +1,12 @@
 
 import { Container } from "@mui/material"
-import CardSpecs from "./FilterSpecs"
+import FilterSpecs from "./FilterSpecs"
+import CardSpecs from "./CardSpecs"
 
 function Search() {
   return (
     <Container>
+      <FilterSpecs/>
       <CardSpecs/>
     </Container>
   )
