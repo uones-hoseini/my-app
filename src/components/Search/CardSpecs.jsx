@@ -1,5 +1,7 @@
+import { Image } from "@mui/icons-material"
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import React from "react"
+import MyImage from './../../Images/IMG_0929.jpg'
 
 
 export default function CardSpecs() {
@@ -15,9 +17,14 @@ export default function CardSpecs() {
             Mac Miller
           </Typography>
         </CardContent>
-        
+        {/* <Image sx={{ width: 151 }} src={MyImage} alt="Live from space album cover" /> */}
+        <CardMedia
+          component="img"
+          sx={{ width: 151 }}
+          image={MyImage}
+          alt="Live from space album cover"
+        />
       </Box>
-      <CardMedia component="img" sx={{ width: 151 }} image="../../Images/IMG_0929.jpg" alt="Live from space album cover" />
     </Card>
     
   )

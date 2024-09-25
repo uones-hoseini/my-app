@@ -1,9 +1,10 @@
 // src/SignupForm.js
 import React from 'react';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import { Box, TextField, Button, Typography, Container } from '@mui/material';
 
 const Signup = () => {
   return (
+    <Container sx={{marginTop:10}}>
     <Box
       component="form"
       sx={{
@@ -49,6 +50,7 @@ const Signup = () => {
         Sign Up
       </Button>
     </Box>
+    </Container>
   );
 };
 

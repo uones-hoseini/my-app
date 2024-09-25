@@ -5,7 +5,7 @@ import CardSpecs from "./CardSpecs"
 
 function Search() {
   return (
-    <Container>
+    <Container sx={{marginTop:10}}>
       <FilterSpecs/>
       <CardSpecs/>
     </Container>
