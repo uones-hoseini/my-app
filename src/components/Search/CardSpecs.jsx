@@ -1,7 +1,7 @@
 import { Image } from "@mui/icons-material"
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import React from "react"
-import MyImage from './../../Images/IMG_0929.jpg'
+import MyImage from './../../Images/User-Avatar-in-Suit-PNG.png'
 
 
 export default function CardSpecs() {

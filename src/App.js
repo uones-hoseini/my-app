@@ -7,22 +7,23 @@ import "@fontsource/roboto/700.css"
 import Signup from "./components/Signup"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Header from "./components/Header"
-import Search from "./components/Search/Search"
+import Search from "./components/Search/OrderPage"
 import Profile from "./components/Profile/Profile"
+import MyProfile from "./components/Profile/MyProfile"
 
 function App() {
   return (
     <div>
-     <BrowserRouter>
-     <Header/>
-     <Routes>
-     <Route path="/search" element={<Search/>}/>
-     <Route path="/profile" element={<Profile/>}/>
-      {/* <Route path="/test" element={<Header/>}/> */}
-      <Route path="/login" element={<Login/>} />
-      <Route path="/signup" element={<Signup/>}/>
-     </Routes>
-     </BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/search" element={<Search />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

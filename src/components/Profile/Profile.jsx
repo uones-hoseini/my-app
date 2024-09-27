@@ -5,11 +5,13 @@ import { Grid } from "@mui/joy"
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailIcon from '@mui/icons-material/Mail';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import ModalOrder from "../ModalOrder";
 
 export default function Profile() {
   return (
     <>
       <Container sx={{ marginTop: 10 }}>
+        <ModalOrder/>
         <Grid display="flex" justifyContent="center" alignItems="center" width="40">
           <Avatar src={ImageAvatar} sx={{ width: 130, height: 130 }} />
         </Grid>
@@ -42,8 +44,20 @@ export default function Profile() {
         <ListItemText primary="(+90)5510486924" secondary="" />
       </ListItem>
     </List>
-    
+    <form>
+        <label htmlFor="username">Username</label>
+        <input type="text" id="username" name="username" />
+
+        <label htmlFor="email">E-mail</label>
+        <input type="email" id="email" name="email" />
+
+        <label htmlFor="channel">Channel</label>
+        <input type="text" id="channel" name="channel" />
+
+        <button>Submit</button>
+      </form>
       </Container>
+      
     </>
   )
 }
