@@ -35,7 +35,7 @@ import FileUpload from "./FileUpload"
 import CountrySelector from "./CountrySelector"
 import EditorToolbar from "./EditorToolbar"
 import { Container } from "@mui/material"
-
+import OrderPage from "../Search/OrderPage"
 export default function MyProfile() {
   return (
     <Container sx={{ marginTop: 20 }}>
@@ -88,17 +88,19 @@ export default function MyProfile() {
             }}
           >
             <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={0}>
-              Settings
+            
+              <Link href="http://localhost:3000/orderpage" underline="none">Order Page</Link>
             </Tab>
-            <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={1}>
-              Team
+             <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={1}>
+             <Link href="#basics" underline="none">New Order</Link>
+              <Link />
             </Tab>
-            <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={2}>
+            {/*<Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={2}>
               Plan
             </Tab>
             <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={3}>
               Billing
-            </Tab>
+            </Tab> */}
           </TabList>
         </Tabs>
       </Box>
