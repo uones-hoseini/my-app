@@ -2,62 +2,49 @@ import { Avatar, CardMedia, Container, List, ListItem, ListItemAvatar, ListItemT
 import React from "react"
 import ImageAvatar from "./../../Images/User-Avatar-in-Suit-PNG.png"
 import { Grid } from "@mui/joy"
-import PhoneIcon from '@mui/icons-material/Phone';
-import MailIcon from '@mui/icons-material/Mail';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import ModalOrder from "../ModalOrder";
+import PhoneIcon from "@mui/icons-material/Phone"
+import MailIcon from "@mui/icons-material/Mail"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
+import ModalOrder from "../Modals/ModalOrder"
 
 export default function Profile() {
   return (
     <>
       <Container sx={{ marginTop: 10 }}>
-        <ModalOrder/>
+        <ModalOrder />
         <Grid display="flex" justifyContent="center" alignItems="center" width="40">
           <Avatar src={ImageAvatar} sx={{ width: 130, height: 130 }} />
         </Grid>
-        <Typography sx={{textAlign:"center",marginTop:10,fontStyle:"bold"}} gutterBottom variant="h4" component="div">
+        <Typography sx={{ textAlign: "center", marginTop: 10, fontStyle: "bold" }} gutterBottom variant="h4" component="div">
           Younes Hosseini
         </Typography>
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <PhoneIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="(+90)5510486924" secondary="" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <MailIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="uoneshoseini4@gmail.com" secondary="" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <WhatsAppIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="(+90)5510486924" secondary="" />
-      </ListItem>
-    </List>
-    <form>
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" name="username" />
-
-        <label htmlFor="email">E-mail</label>
-        <input type="email" id="email" name="email" />
-
-        <label htmlFor="channel">Channel</label>
-        <input type="text" id="channel" name="channel" />
-
-        <button>Submit</button>
-      </form>
+        <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+          <ListItem>
+            <ListItemAvatar>
+              <Avatar>
+                <PhoneIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="(+90)5510486924" secondary="" />
+          </ListItem>
+          <ListItem>
+            <ListItemAvatar>
+              <Avatar>
+                <MailIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="uoneshoseini4@gmail.com" secondary="" />
+          </ListItem>
+          <ListItem>
+            <ListItemAvatar>
+              <Avatar>
+                <WhatsAppIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="(+90)5510486924" secondary="" />
+          </ListItem>
+        </List>
       </Container>
-      
     </>
   )
 }

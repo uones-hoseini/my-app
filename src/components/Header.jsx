@@ -1,4 +1,4 @@
-import { AppBar, Button, Toolbar, Typography } from "@mui/material"
+import { AppBar, Button, Link, Tab, Toolbar, Typography } from "@mui/material"
 
 import styled from "styled-components"
 import AccountBoxIcon from "@mui/icons-material/AccountBox"
@@ -14,19 +14,17 @@ function Header() {
     <>
       <AppBar sx={{ backgroundColor: "black" }}>
         <StyleToolbar sx={{ gap: 1 }}>
-          <Typography width="200px" sx={{marginRight:130}} variant="h4">
+          <Typography width="200px" sx={{ marginRight: 130 }} variant="h4">
             TRUST APP
           </Typography>
 
-        
-            <Button variant="contained" color="action">
-              <AccountBoxIcon fontSize="large" />
-            </Button>
+          <Link href="http://localhost:3000/myprofile" color="#fff">
+            <AccountBoxIcon fontSize="large" />
+          </Link>
 
-            <Button  variant="contained" color="action">
-              <LogoutIcon fontSize="large" />
-            </Button>
-         
+          <Button variant="contained" color="action">
+            <LogoutIcon fontSize="large" />
+          </Button>
         </StyleToolbar>
       </AppBar>
     </>
