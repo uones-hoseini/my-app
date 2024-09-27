@@ -10,6 +10,7 @@ import Header from "./components/Header"
 import Search from "./components/Search/OrderPage"
 import Profile from "./components/Profile/Profile"
 import MyProfile from "./components/Profile/MyProfile"
+import OrderPage from "./components/Search/OrderPage"
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/search" element={<Search />} />
+          <Route path="/orderpage" element={<OrderPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/login" element={<Login />} />

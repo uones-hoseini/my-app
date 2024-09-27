@@ -3,7 +3,7 @@ import { Container } from "@mui/material"
 import FilterSpecs from "./FilterSpecs"
 import CardSpecs from "./CardSpecs"
 
-function Search() {
+function OrderPage() {
   return (
     <Container sx={{marginTop:10}}>
       <FilterSpecs/>
@@ -12,4 +12,4 @@ function Search() {
   )
 }
 
-export default Search
+export default OrderPage
