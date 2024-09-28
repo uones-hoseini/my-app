@@ -25,16 +25,19 @@ function MyForm() {
       <h1>Create Your Order</h1>
 
       <form className="form">
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Product type</label>
         <input type="text" id="username" name="username" />
-
-        <label htmlFor="email">E-mail</label>
-        <input type="email" id="email" name="email" />
 
         <label htmlFor="weight">Weight</label>
         <input type="number" id="weight" name="weight" />
- <br/>
-        <button id="btn" color="blue">Submit</button>
+        <label htmlFor="weight">Orgin</label>
+        <input type="text" id="weight" name="weight" />
+        <label htmlFor="weight">Destination</label>
+        <input type="text" id="weight" name="weight" />
+        <br />
+        <button id="btn" color="blue">
+          SAVE
+        </button>
       </form>
     </div>
   )

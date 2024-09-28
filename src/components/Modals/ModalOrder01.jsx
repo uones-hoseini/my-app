@@ -223,9 +223,9 @@ const CustomModalBackdrop = styled(Backdrop)`
 
 const TriggerButton = styled(Button)(
   ({ theme }) => css`
-    font-family: "IBM Plex Sans", sans-serif;
+    // font-family: "IBM Plex Sans", sans-serif;
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.5;
     padding: 8px 16px;
     border-radius: 8px;
@@ -237,7 +237,7 @@ const TriggerButton = styled(Button)(
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
     &:hover {
-      background: ${theme.palette.mode === "dark" ? grey[800] : grey[50]};
+      background: ${theme.palette.mode === "dark" ? grey[800] : grey[100]};
       border-color: ${theme.palette.mode === "dark" ? grey[600] : grey[300]};
     }
 
