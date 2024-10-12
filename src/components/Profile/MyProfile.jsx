@@ -17,11 +17,11 @@ import Tabs from "@mui/joy/Tabs"
 import TabList from "@mui/joy/TabList"
 import Tab, { tabClasses } from "@mui/joy/Tab"
 import Breadcrumbs from "@mui/joy/Breadcrumbs"
-import Link from "@mui/joy/Link"
+// import Link from "@mui/joy/Link"
 import Card from "@mui/joy/Card"
 import CardActions from "@mui/joy/CardActions"
 import CardOverflow from "@mui/joy/CardOverflow"
-
+import ReactDOM from 'react-dom';
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded"
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded"
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded"
@@ -38,6 +38,8 @@ import { Container } from "@mui/material"
 import OrderPage from "../Search/OrderPage"
 import ModalOrder from "../Modals/ModalOrder"
 import ModalOrder01 from "../Modals/ModalOrder01"
+import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 export default function MyProfile() {
   return (
     <Container sx={{ marginTop: 10 }}>
@@ -92,9 +94,7 @@ export default function MyProfile() {
               }}
             >
               <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={0}>
-                <Link href="http://localhost:3000/orderpage" underline="none" color="neutral">
-                  Order Page
-                </Link>
+               <Link to="http://localhost:3000/orderpage" >Order Page</Link>
               </Tab>
               <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={1}>
                 {/* <Link href="#basics" underline="none"  color="neutral">New Order</Link>

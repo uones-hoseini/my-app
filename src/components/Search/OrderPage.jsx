@@ -8,6 +8,10 @@ function OrderPage() {
     <Container sx={{marginTop:10}}>
       <FilterSpecs/>
       <CardSpecs/>
+      <CardSpecs/>
+      <CardSpecs/>
+      <CardSpecs/>
+      <CardSpecs/>
     </Container>
   )
 }

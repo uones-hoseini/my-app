@@ -21,8 +21,8 @@ function App() {
           <Route path="/orderpage" element={<OrderPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/myprofile" element={<MyProfile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />signup
+          <Route path="/" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </div>
