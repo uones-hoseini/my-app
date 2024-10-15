@@ -1,4 +1,4 @@
-import "./App.css"
+
 import Login from "./components/Login"
 import "@fontsource/roboto/300.css"
 import "@fontsource/roboto/400.css"
@@ -6,23 +6,27 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import Signup from "./components/Signup"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Header from "./components/Header"
+import Header from "../src/components/Header/Header"
 import Search from "./components/Search/OrderPage"
 import Profile from "./components/Profile/Profile"
 import MyProfile from "./components/Profile/MyProfile"
 import OrderPage from "./components/Search/OrderPage"
+import SimpleModal from "./components/Modals/ModalOrder"
+import { useState } from "react"
 
 function App() {
+  const[loggedIn,setLoggedIn]=useState()
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Routes>
-          <Route path="/orderpage" element={<OrderPage />} />
+          {/* <Route path="/orderpage" element={loggedIn ? <OrderPage /> : <Login  setLoggedIn={setLoggedIn}/>  } /> */}
           <Route path="/profile" element={<Profile />} />
           <Route path="/myprofile" element={<MyProfile />} />
-          <Route path="/login" element={<Login />} />signup
-          <Route path="/" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          signup
+          <Route path="/" element={loggedIn ? <OrderPage /> : <Signup/> } />
         </Routes>
       </BrowserRouter>
     </div>

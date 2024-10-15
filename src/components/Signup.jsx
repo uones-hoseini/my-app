@@ -1,24 +1,23 @@
-import React,{useState} from "react";
-import { Box, TextField, Button, Typography, Container } from "@mui/material";
-import Axios from "axios";
+import React, { useState } from "react"
+import { Box, TextField, Button, Typography, Container } from "@mui/material"
+import Axios from "axios"
 
 const Signup = () => {
-const[username,setUsername]=useState()
-const[email,setEmail]=useState()
-const[password,setPassword]=useState()
+  const [username, setUsername] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     try {
       await Axios.post("http://localhost:8080/register", {
         username,
         email,
-        password
-      });
-      console.log("User was successfully created.",e.target.value);
+        password,
+      })
+      console.log("User was successfully created.", e.target.value)
     } catch (e) {
-      console.error("There was an error:", e);
-
+      console.error("There was an error:", e)
     }
   }
 
@@ -39,15 +38,15 @@ const[password,setPassword]=useState()
         <Typography variant="h4" component="h1" gutterBottom>
           Sign Up
         </Typography>
-        <TextField required onChange={e=>setUsername(e.target.value)} id="username" label="User Name" variant="outlined" />
-        <TextField required onChange={e=>setEmail(e.target.value)} id="email" label="Email" variant="outlined" type="email" />
-        <TextField required onChange={e=>setPassword(e.target.value)} id="password" label="Password" variant="outlined" type="password" />
+        <TextField required onChange={(e) => setUsername(e.target.value)} id="username" label="User Name" variant="outlined" />
+        <TextField required onChange={(e) => setEmail(e.target.value)} id="email" label="Email" variant="outlined" type="email" />
+        <TextField required onChange={(e) => setPassword(e.target.value)} id="password" label="Password" variant="outlined" type="password" />
         <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
           Sign Up
         </Button>
       </Box>
     </Container>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup
