@@ -18,8 +18,8 @@ export default function UseModal() {
 
   return (
     <div>
-      <TriggerButton onClick={handleOpen} color="success" >Create New Order</TriggerButton>
-      <Modal aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description" open={open} onClose={handleClose} closeAfterTransition>
+      <TriggerButton  onClick={handleOpen} color="success" >Create New Order</TriggerButton>
+      <Modal  aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description" open={open} onClose={handleClose} closeAfterTransition>
         <Fade in={open}>
           <ModalContent sx={style}>
             <MyForm />

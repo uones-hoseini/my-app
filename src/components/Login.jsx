@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, {  useState } from "react"
 import { TextField, Button, Container, Typography, Box } from "@mui/material"
 import Axios from "axios"
 
@@ -9,9 +9,10 @@ function Login(props) {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const response = await Axios.post("http://localhost:8080/login", { username, password })
+      const response = await Axios.post("/login", { username, password })
       if (response.data) {
-        console.log(response.data)
+        console.log(response.data.user)
+        localStorage.setItem("token", response.data.token)
         props.setLoggedIn(true)
       } else {
         console.log("Incorrect username/password")

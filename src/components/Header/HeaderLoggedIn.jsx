@@ -21,10 +21,10 @@ function HeaderLoggedIn(props) {
         <Avatar src="https://gravatar.com/avatar/b9408a09298632b5151200f3449434ef?s=128" alt="User avatar" />
       </IconButton>
       
-      <Button component={RouterLink} to="/create-post" variant="contained" color="success" size="small" sx={{ mr: 2 }}>
+      <Button component={RouterLink} to="/create-order" variant="contained" color="success" size="small" sx={{ mr: 2 }}>
         Create Order
       </Button>
-      <Button to="/" onClick={()=>props.setLoggedIn(false)} variant="contained" color="secondary" size="small">
+      <Button to="/" onClick={()=>{localStorage.removeItem('token'); props.setLoggedIn(false)}} variant="contained" color="secondary" size="small">
        
         Sign Out
       </Button>

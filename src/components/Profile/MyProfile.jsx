@@ -94,7 +94,7 @@ export default function MyProfile() {
               }}
             >
               <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={0}>
-               <Link to="http://localhost:3000/orderpage" >Order Page</Link>
+               <Link to="/orders" >Order Page</Link>
               </Tab>
               <Tab sx={{ borderRadius: "6px 6px 0 0" }} indicatorInset value={1}>
                 {/* <Link href="#basics" underline="none"  color="neutral">New Order</Link>

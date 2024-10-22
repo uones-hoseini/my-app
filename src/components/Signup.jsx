@@ -10,12 +10,12 @@ const Signup = () => {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      await Axios.post("http://localhost:8080/register", {
+      const response = await Axios.post("/register", {
         username,
         email,
         password,
       })
-      console.log("User was successfully created.", e.target.value)
+      console.log("User was successfully created.", response)
     } catch (e) {
       console.error("There was an error:", e)
     }
