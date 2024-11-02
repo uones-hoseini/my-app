@@ -1,4 +1,4 @@
-import Login from "./components/Login"
+
 import "@fontsource/roboto/300.css"
 import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/500.css"
@@ -12,13 +12,22 @@ import MyProfile from "./components/Profile/MyProfile"
 import OrderPage from "./components/Search/OrderPage"
 import SimpleModal from "./components/Modals/ModalOrder"
 import CreateOrder from "./components/Form/CreateOrder"
+import EditProfile from "./components/Form/EditProfile"
 import { useState } from "react"
 import Axios from "axios"
 
-Axios.defaults.baseURL = "http://localhost:8080"
+Axios.defaults.baseURL = "http://localhost:1337/api"
+Axios.interceptors.request.use((config) => {
+  const token = localStorage.getItem("jwt"); 
+  if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token"))
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt"))
   return (
     <div className="App">
       <BrowserRouter>
@@ -31,9 +40,10 @@ function App() {
               <Route path="/create-order" element={<CreateOrder />} />
               <Route path="/myprofile" element={<MyProfile />} />
               <Route path="/orders" element={< OrderPage/>} />
+              <Route path="/edit-profile" element={< EditProfile/>} />
             </>
           )}
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="*" element={<h2><br/><br/><br/><br/><br/> 404 - NOT FOUND</h2>}/>
         </Routes>
       </BrowserRouter>

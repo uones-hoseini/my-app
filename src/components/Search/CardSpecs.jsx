@@ -1,31 +1,48 @@
 import { Image } from "@mui/icons-material"
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
-import React from "react"
-import MyImage from './../../Images/User-Avatar-in-Suit-PNG.png'
+import React, { useEffect } from "react"
+import Axios from "axios"
 
-
-export default function CardSpecs() {
+export default function CardSpecs(props) {
   return (
-    
-    <Card sx={{ display: "flex" }}>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <CardContent sx={{ flex: "1 0 auto" }}>
-          <Typography component="div" variant="h5">
-            Live From Space
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row-reverse", // Change to 'column' for vertical layout
+        justifyContent: "space-between", // Aligns children horizontally
+        alignItems: "center", // Aligns children vertically
+        height: "180px", // Full viewport height
+       m:2,
+background:'#dddddd'      }}
+    >
+      <Box sx={{ p: 2, textAlign: "left" }}>
+        <Typography variant="span" sx={{ p: 2 }}>
+          ORGIN:
+          <Typography color="green" variant="h6">
+            {props.orgin}
           </Typography>
-          <Typography variant="subtitle1" component="div" sx={{ color: "secondary" }}>
-            Mac Miller
-          </Typography>
-        </CardContent>
-        {/* <Image sx={{ width: 151 }} src={MyImage} alt="Live from space album cover" /> */}
-        <CardMedia
-          component="img"
-          sx={{ width: 151 }}
-          image={MyImage}
-          alt="Live from space album cover"
-        />
+        </Typography>
+        <Typography variant="span" sx={{ p: 2 }}>
+          DESTANATION:
+          <Typography color="green" variant="h6">
+            {props.destination}
+          </Typography>{" "}
+        </Typography>
       </Box>
-    </Card>
-    
+      <Box sx={{ p: 2, textAlign: "left" }}>
+        <Typography variant="span" sx={{ p: 2 }}>
+          NAME:
+          <Typography color="green" variant="h6">
+            {props.name}
+          </Typography>
+        </Typography>
+        <Typography variant="span" sx={{ p: 2 }}>
+          WEIGHT:
+          <Typography color="green" variant="h6">
+            {props.weight}
+          </Typography>
+        </Typography>
+      </Box>
+    </Box>
   )
 }

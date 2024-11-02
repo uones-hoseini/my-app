@@ -24,7 +24,7 @@ function HeaderLoggedIn(props) {
       <Button component={RouterLink} to="/create-order" variant="contained" color="success" size="small" sx={{ mr: 2 }}>
         Create Order
       </Button>
-      <Button to="/" onClick={()=>{localStorage.removeItem('token'); props.setLoggedIn(false)}} variant="contained" color="secondary" size="small">
+      <Button to="/" onClick={()=>{localStorage.removeItem('jwt'); props.setLoggedIn(false)}} variant="contained" color="secondary" size="small">
        
         Sign Out
       </Button>

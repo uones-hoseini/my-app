@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import Axios from "axios"
 
 import { Box, TextField, Button, Container } from "@mui/material"
@@ -10,15 +10,18 @@ function HeaderLoggedOut(props) {
   async function handleSubmit(e) {
     e.preventDefault()
     try {
-      const response = await Axios.post("http://localhost:8080/login", { username, password })
+      const response = await Axios.post("/auth/local", { identifier:username, password })
       if (response.data) {
         console.log(response.data)
-        localStorage.setItem("token", response.data.token)
+        localStorage.setItem("jwt", response.data.jwt)
+        localStorage.setItem("id", response.data.user.id)
         props.setLoggedIn(true)
       } else {
         console.log("Incorrect username/password")
       }
-    } catch (e) {}
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   return (
