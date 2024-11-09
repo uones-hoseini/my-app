@@ -3,8 +3,11 @@ import { Box, IconButton, Avatar, Button } from '@mui/material';
 import { Link, Link as RouterLink } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import CommentIcon from '@mui/icons-material/Comment';
+import { useDispatch } from 'react-redux';
+import { loggout } from '../../Reducer/logginSlice';
 
-function HeaderLoggedIn(props) {
+function HeaderLoggedIn() {
+  const dispatch=useDispatch()
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', my: 3 }}>
       <IconButton color="inherit" sx={{ mr: 2 }}>
@@ -24,7 +27,7 @@ function HeaderLoggedIn(props) {
       <Button component={RouterLink} to="/create-order" variant="contained" color="success" size="small" sx={{ mr: 2 }}>
         Create Order
       </Button>
-      <Button to="/" onClick={()=>{localStorage.removeItem('jwt'); props.setLoggedIn(false)}} variant="contained" color="secondary" size="small">
+      <Button to="/" onClick={()=>{localStorage.removeItem('jwt'); dispatch(loggout())}} variant="contained" color="secondary" size="small">
        
         Sign Out
       </Button>

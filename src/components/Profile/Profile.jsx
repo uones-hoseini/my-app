@@ -7,7 +7,8 @@ import MailIcon from "@mui/icons-material/Mail"
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import ModalOrder from "../Modals/ModalOrder"
 
-export default function Profile() {
+
+export default function Profile(props) {
   return (
     <>
       <Container sx={{ marginTop: 10 }}>
@@ -16,7 +17,7 @@ export default function Profile() {
           <Avatar src={ImageAvatar} sx={{ width: 130, height: 130 }} />
         </Grid>
         <Typography sx={{ textAlign: "center", marginTop: 10, fontStyle: "bold" }} gutterBottom variant="h4" component="div">
-          Younes Hosseini
+          {props.username}
         </Typography>
         <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
           <ListItem>

@@ -15,6 +15,8 @@ import CreateOrder from "./components/Form/CreateOrder"
 import EditProfile from "./components/Form/EditProfile"
 import { useState } from "react"
 import Axios from "axios"
+import { Provider, useDispatch, useSelector } from "react-redux"
+import { loggin } from "./Reducer/logginSlice"
 
 Axios.defaults.baseURL = "http://localhost:1337/api"
 Axios.interceptors.request.use((config) => {
@@ -27,14 +29,18 @@ Axios.interceptors.request.use((config) => {
 
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt"))
+  // const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt"))
+  const dispatch=useDispatch()
+  const isLoggedin=useSelector((state)=>state.isLoggedin)
+  console.log(isLoggedin)
   return (
     <div className="App">
+      
       <BrowserRouter>
-        <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Header />
         <Routes>
-        <Route path="/" element={loggedIn ? <OrderPage /> : <Signup />} />
-          {loggedIn && (
+        <Route path="/" element={isLoggedin ? <OrderPage /> : <Signup />} />
+          {isLoggedin && (
             <>
               <Route path="/profile" element={<Profile />} />
               <Route path="/create-order" element={<CreateOrder />} />
