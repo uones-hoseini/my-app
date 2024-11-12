@@ -1,10 +1,16 @@
-import { Box, Typography, Button } from "@mui/material"
+import { Box, Typography, Button, Container } from "@mui/material"
+import EditModal from "./EditOrder";
 import Axios from "axios"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CardSpecs(props) {
+  const [isEditOpen, setEditOpen] = useState(false);
   function handleEdit(id) {
     console.log("Edit item with id:", id)
     // Implement your edit logic here
+    const navigate=useNavigate
+    navigate(`/edit/$(id)`)
 
   }
   async function handleDelete(id) {
@@ -51,7 +57,7 @@ export default function CardSpecs(props) {
   
   
   return (
-    
+    <Container sx={{ marginTop: 10 }}>
     <Box
     
       sx={{
@@ -107,13 +113,28 @@ export default function CardSpecs(props) {
         </Typography>
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", p: 2 }}>
-        <Button variant="contained" color="success" onClick={() => handleEdit(props.id)} sx={{ mb: 1, minWidth: "100px" }} fullWidth>
-          Edit
-        </Button>
+      <Button
+  variant="contained"
+  color="success"
+  onClick={() => window.location.href = "http://localhost:3000/edit"}
+  sx={{ mb: 1, minWidth: "100px" }}
+  fullWidth
+>
+  Edit
+</Button>
+
+
+        {/* Your existing component code */}
+{/*     
+      <button onClick={handleEdit}>Edit</button>
+      <EditModal open={isEditOpen} onClose={() => setEditOpen(false)} item={props} onSave={handleSave} /> */}
+  
         <Button variant="contained" color="error" onClick={() => handleDelete(props.id)} sx={{ minWidth: "100px" }} fullWidth>
           Delete
         </Button>
       </Box>
+      
     </Box>
+    </Container>
   )
 }

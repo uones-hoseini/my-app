@@ -17,6 +17,7 @@ import { useState } from "react"
 import Axios from "axios"
 import { Provider, useDispatch, useSelector } from "react-redux"
 import { loggin } from "./Reducer/logginSlice"
+import EditPage from "./components/Search/EditOrder"
 
 Axios.defaults.baseURL = "http://localhost:1337/api"
 Axios.interceptors.request.use((config) => {
@@ -43,6 +44,8 @@ function App() {
           {isLoggedin && (
             <>
               <Route path="/profile" element={<Profile />} />
+              <Route path="/edit" element={<EditPage  />} />
+
               <Route path="/create-order" element={<CreateOrder />} />
               <Route path="/myprofile" element={<MyProfile />} />
               <Route path="/orders" element={< OrderPage/>} />

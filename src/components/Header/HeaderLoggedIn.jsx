@@ -20,7 +20,7 @@ function HeaderLoggedIn() {
         </Box>
       </IconButton>
       
-      <IconButton href='http://localhost:3000/myprofile' color="inherit" sx={{ mr: 2 }}>
+      <IconButton href='http://localhost:3000/profile' color="inherit" sx={{ mr: 2 }}>
         <Avatar src="https://gravatar.com/avatar/b9408a09298632b5151200f3449434ef?s=128" alt="User avatar" />
       </IconButton>
       

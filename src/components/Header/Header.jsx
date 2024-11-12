@@ -3,14 +3,14 @@ import { AppBar, Toolbar, Typography, Button, Box, Container, IconButton, Menu, 
 import { Link as RouterLink } from "react-router-dom"
 import HeaderLoggedOut from "./HeaderLoggedOut"
 import HeaderLoggedIn from "./HeaderLoggedIn"
-import { useDispatch, useSelector } from "react-redux"
+import {  useSelector } from "react-redux"
 import { loggin, loggout } from "../../Reducer/logginSlice"
 
 
 function Header(props) {
   const username=useSelector((state)=>state.user.username)
-  console.log(username)
-  const dispatch=useDispatch()
+  console.log("username")
+ 
   const isLoggedIn=useSelector((state)=>state.isLoggedin)
   console.log(isLoggedIn)
   return (
