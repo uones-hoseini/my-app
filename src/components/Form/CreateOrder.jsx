@@ -12,15 +12,7 @@ function CreateOrder() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    // {
-    //   "data": {
-    //     "destination": "a",
-    //     "orgin": "a",
-    //     "weight": 1,
-    //     "isActive": true,
-    //     "user": "1"
-    //   }
-    // }
+  
     const dataToSend= {
       data: {
         destination: destination,

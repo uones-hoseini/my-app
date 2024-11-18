@@ -51,7 +51,7 @@ export default function EditProfile() {
         margin="normal"
       />
       <Button variant="contained" color="primary" onClick={handleSubmit}>
-        Save Changes
+        
       </Button>
     </Container>
   );

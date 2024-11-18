@@ -17,6 +17,7 @@ import { useState } from "react"
 import Axios from "axios"
 import { Provider, useDispatch, useSelector } from "react-redux"
 import { loggin } from "./Reducer/logginSlice"
+import { setId } from "./Reducer/orderSlice"
 import EditPage from "./components/Search/EditOrder"
 
 Axios.defaults.baseURL = "http://localhost:1337/api"
@@ -33,6 +34,7 @@ function App() {
   // const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt"))
   const dispatch=useDispatch()
   const isLoggedin=useSelector((state)=>state.isLoggedin)
+  const id=useSelector((state)=>state.order)
   console.log(isLoggedin)
   return (
     <div className="App">
@@ -44,12 +46,12 @@ function App() {
           {isLoggedin && (
             <>
               <Route path="/profile" element={<Profile />} />
-              <Route path="/edit" element={<EditPage  />} />
+              <Route path="/edit/:id" element={<EditPage  />} />
 
               <Route path="/create-order" element={<CreateOrder />} />
               <Route path="/myprofile" element={<MyProfile />} />
               <Route path="/orders" element={< OrderPage/>} />
-              <Route path="/edit-profile" element={< EditProfile/>} />
+              <Route path="/edit-profile/:id" element={< EditProfile/>} />
             </>
           )}
           {/* <Route path="/login" element={<Login />} /> */}

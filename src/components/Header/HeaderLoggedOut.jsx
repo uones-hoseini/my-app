@@ -3,7 +3,8 @@ import Axios from "axios"
 
 import { Box, TextField, Button, Container } from "@mui/material"
 import { loggin } from "../../Reducer/logginSlice"
-import { setId,setPhone,setUsername as setxxx } from "../../Reducer/userSlice"
+import { setId,setPhone,setEmail,setUsername as setxxx } from "../../Reducer/userSlice"
+
 import { useDispatch } from "react-redux"
 
 function HeaderLoggedOut() {
@@ -21,6 +22,8 @@ function HeaderLoggedOut() {
         dispatch(setxxx(response.data.user.username))
         dispatch(setId(response.data.user.documentId))
         dispatch(setPhone(response.data.user.phone))
+        dispatch(setEmail(response.data.user.email))
+      
         dispatch(loggin())
       } else {
         console.log("Incorrect username/password")
